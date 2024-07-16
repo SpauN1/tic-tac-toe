@@ -1,5 +1,5 @@
-import { Game } from '../components/game/game';
+import { Header } from '../components/header/Header';
 
 export default function HomePage() {
-  return <Game />;
+  return <Header />;
 }
