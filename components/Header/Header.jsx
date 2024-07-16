@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import logoSrc from './assets/logo.svg';
-import { ArrowDownIcon } from './assets/arrowDownIcon';
+import { ArrowDownIcon } from './assets/arrow-down-icon';
 
 import { Profile } from '../Profile';
 
