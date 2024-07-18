@@ -1,5 +1,5 @@
 import { Header } from '../components/Header';
-import { GameTitle } from '../components/Game';
+import { GameInfo, GameTitle } from '../components/Game';
 
 export default function HomePage() {
   return (
@@ -7,6 +7,7 @@ export default function HomePage() {
       <Header />
       <main className="pt-6 mx-auto max-w-[616px]">
         <GameTitle />
+        <GameInfo className="mt-4 " />
       </main>
     </div>
   );
