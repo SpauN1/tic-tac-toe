@@ -3,7 +3,7 @@ import logoSrc from './assets/logo.svg';
 import { ArrowDownIcon } from './assets/arrow-down-icon';
 
 import { Profile } from '../Profile';
-import { UiButton } from '../../uikit/uiButton';
+import { UiButton } from '../uikit/UiButton';
 
 export const Header = () => {
   return (
