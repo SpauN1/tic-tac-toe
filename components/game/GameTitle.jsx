@@ -1,11 +1,11 @@
 import Link from 'next/link';
 
-import { ArrowLeftIcon } from './assets/arrow-left-icon';
-import { StarIcon } from './assets/star-icon';
-import { UserIcon } from './assets/user-icon';
-import { HistoryIcon } from './assets/history-icon';
+import { ArrowLeftIcon } from './assets/icon/arrow-left-icon';
+import { StarIcon } from './assets/icon/star-icon';
+import { UserIcon } from './assets/icon/user-icon';
+import { HistoryIcon } from './assets/icon/history-icon';
 
-export const GameTitle = () => {
+export const GameTitle = ({ playersCount }) => {
   return (
     <div className="pl-2">
       <Link
@@ -19,7 +19,7 @@ export const GameTitle = () => {
       <div className="flex items-center gap-3 text-xs text-slate-400">
         <StarIcon />
         <div className="flex items-center gap-1">
-          <UserIcon /> 2
+          <UserIcon /> {playersCount}
         </div>
         <div className="flex items-center gap-1">
           <HistoryIcon /> 1 мин на ход
