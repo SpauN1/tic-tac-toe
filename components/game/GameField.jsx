@@ -4,8 +4,9 @@ import { UiButton } from '../uikit/UiButton';
 import { GameSymbol } from './GameSymbol';
 import { useGameState } from './useGameState';
 
-export const GameField = ({ className }) => {
-  const { cells, currentMove, handleCellClick, nextMove } = useGameState();
+export function GameField({ className, playersCount }) {
+  const { cells, currentMove, handleCellClick, nextMove } =
+    useGameState(playersCount);
 
   const actions = (
     <>
@@ -29,7 +30,7 @@ export const GameField = ({ className }) => {
         {cells.map((symbol, index) => (
           <GameCell
             key={index}
-            handleCellClick={() => {
+            onClick={() => {
               handleCellClick(index);
             }}
           >
@@ -39,12 +40,12 @@ export const GameField = ({ className }) => {
       </GameGrid>
     </GameFieldLayout>
   );
-};
+}
 
-function GameCell({ children, handleCellClick }) {
+function GameCell({ children, onClick }) {
   return (
     <button
-      onClick={handleCellClick}
+      onClick={onClick}
       className="border border-slate-200 -ml-px -mt-px flex items-center justify-center"
     >
       {children}
