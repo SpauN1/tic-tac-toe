@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import clsx from 'clsx';
 
 import avatarSrc1 from './assets/images/avatar-1.png';
@@ -60,6 +61,13 @@ export function GameInfo({ className, playersCount }) {
 }
 
 function PlayerInfo({ playerInfo, isRight }) {
+  const [seconds, setSeconds] = useState(66);
+
+  const minutesString = String(Math.floor(seconds / 60)).padStart(2, '0');
+  const secondsString = String(seconds % 60).padStart(2, '0');
+
+  const isDanger = seconds < 10;
+
   return (
     <div className="flex gap-3 items-center">
       <div className={clsx('relative', isRight && 'order-3')}>
@@ -76,11 +84,12 @@ function PlayerInfo({ playerInfo, isRight }) {
       <div className={clsx('h-6 w-px bg-slate-200', isRight && 'order-2')} />
       <div
         className={clsx(
-          'text-slate-900 text-lg font-semibold',
-          isRight && 'order-1'
+          'text-lg font-semibold',
+          isRight && 'order-1',
+          isDanger ? 'text-orange-600' : 'text-slate-900'
         )}
       >
-        01:08
+        {minutesString}:{secondsString}
       </div>
     </div>
   );
