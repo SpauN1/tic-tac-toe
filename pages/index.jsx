@@ -21,8 +21,9 @@ export default function HomePage() {
         <GameTitle playersCount={playersCount} />
         <GameInfo
           playersCount={playersCount}
-          className="mt-4 "
+          className="mt-4"
           currentMove={currentMove}
+          isWinner={!!winnerSequence}
         />
         <GameField
           className="mt-6"
