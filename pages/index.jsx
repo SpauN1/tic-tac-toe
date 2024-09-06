@@ -9,6 +9,8 @@ import {
   winnerSequence,
 } from '../components/Game';
 import { GameSymbol } from '../components/Game/GameSymbol';
+import { UiModal } from '../components/uikit/UiModal';
+import { UiButton } from '../components/uikit/UiButton';
 
 export default function HomePage() {
   const [playersCount] = useState(4);
@@ -39,6 +41,26 @@ export default function HomePage() {
             <GameSymbol symbol={winnerSymbol} />
           </div>
         )}
+        <UiModal
+          width="md"
+          isOpen={winnerSymbol}
+          onClose={() => console.log('close')}
+        >
+          <UiModal.Header>Игра завершена!</UiModal.Header>
+          <UiModal.Body>
+            <div className="text-sm">
+              Победитель: <span className="text-teal-600">Paromovevg</span>
+            </div>
+          </UiModal.Body>
+          <UiModal.Footer>
+            <UiButton size="md" variant="outline">
+              Вернуться
+            </UiButton>
+            <UiButton size="md" variant="primary">
+              Играть снова
+            </UiButton>
+          </UiModal.Footer>
+        </UiModal>
         <GameField
           className="mt-6"
           cells={cells}
